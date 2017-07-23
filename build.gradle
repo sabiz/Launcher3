@@ -31,12 +31,12 @@ android {
 
     productFlavors {
         aosp {
-            applicationId 'com.android.launcher3'
+            applicationId 'com.android.launcher3.sabiz'
             testApplicationId 'com.android.launcher3.tests'
         }
         main {
             minSdkVersion 21
-            applicationId 'com.android.launcher3'
+            applicationId 'com.android.launcher3.sabiz'
             testApplicationId 'com.android.launcher3.tests'
         }
     }
