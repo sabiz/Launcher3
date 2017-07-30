@@ -36,6 +36,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.android.launcher3.sabiz.compat.AppWidgetManagerCompat;
+import com.android.launcher3.sabiz.config.FeatureFlags;
 
 /**
  * A frame layout which contains a QSB. This internally uses fragment to bind the view, which
@@ -99,7 +100,9 @@ public class QsbContainerView extends FrameLayout {
                 sSavedWidgetId = savedInstanceState.getInt(QSB_WIDGET_ID, -1);
             }
             mWrapper = new FrameLayout(getActivity());
-            mWrapper.addView(createQsb(inflater, mWrapper));
+            if(FeatureFlags.QSB_IS_ENABLE) {
+                mWrapper.addView(createQsb(inflater, mWrapper));
+            }
             return mWrapper;
         }
 
